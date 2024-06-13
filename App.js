@@ -49,6 +49,22 @@ app.post("/Search",(req,res)=>{
 })
 
 
+app.post("/delete",(req,res)=>{
+
+    let input=req.body
+    librarymodel.findByIdAndDelete(input._id).then(
+
+        (response)=>{
+            res.json({"status":"success"})
+        }
+
+    ).catch(
+        ()=>{
+            res.json({"status":"fail"})
+        }
+    )
+})
+
 
 
 
