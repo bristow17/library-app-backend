@@ -35,6 +35,21 @@ app.get("/viewall",(req,res)=>{
 }
 )
 
+app.post("/Search",(req,res)=>{
+    let input=req.body
+    librarymodel.find(input).then(
+        (data)=>{
+            res.json(data)
+        }
+    ).catch(
+        (error)=>{
+            res.json(error)
+        }
+    )
+})
+
+
+
 
 
 
