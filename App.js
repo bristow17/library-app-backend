@@ -20,8 +20,20 @@ app.post("/add",(req,res)=>{
 })
 
 
+app.get("/viewall",(req,res)=>{
 
-
+    librarymodel.find().then(
+        
+        (data)=>{
+            res.json(data)
+        }
+    ).catch(
+        (error)=>{
+            res.json(error)
+        }
+    )
+}
+)
 
 
 
